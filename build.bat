@@ -12,12 +12,10 @@ if defined VSINSTALLDIR (
 	goto :BUILD
 )
 
-set NUGETEXE="..\..\.nuget\NuGet.exe"
-
 REM First try to locate VS 2017. Since a user can have multiple installations
 REM of VS 2017 at the same time a utility named vswhere to find a useful candidate.
 if not exist "packages\vswhere\tools\vswhere.exe" (
-	%NUGETEXE% install vswhere -ExcludeVersion -OutputDirectory packages
+	nuget install vswhere -ExcludeVersion -OutputDirectory packages
  )
 
 for /f "usebackq tokens=1* delims=: " %%i in (`packages\vswhere\tools\vswhere -products * -latest -requires Microsoft.Component.MSBuild`) do (

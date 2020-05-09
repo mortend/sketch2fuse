@@ -42,7 +42,7 @@ if [ "$OSTYPE" = msys ]; then
     exit $?
 fi
 
-mono ../../.nuget/NuGet.exe restore
+nuget restore
 
 MSBUILD="/Library/Frameworks/Mono.framework/Versions/4.4.2/bin/msbuild"
 if [ ! -f "$MSBUILD" ]; then

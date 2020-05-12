@@ -42,7 +42,7 @@
       <HintPath Condition="Exists('..\..\..\packages\Mono.Posix-4.5.4.5.0\lib\net45\Mono.Posix.dll')">..\..\..\packages\Mono.Posix-4.5.4.5.0\lib\net45\Mono.Posix.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\node_modules\@fuse-open\uno\release\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\node_modules\@fuse-open\uno\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="plist-cil, Version=2.1.0.0, Culture=neutral, PublicKeyToken=ec2cb9e1a719933d, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\plist-cil.2.1.0\lib\netstandard1.3\plist-cil.dll</HintPath>

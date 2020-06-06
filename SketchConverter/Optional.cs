@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace SketchConverter
 {
-
 	public static class NullToNone
 	{
 		/// <summary>
@@ -20,12 +19,10 @@ namespace SketchConverter
 
 	public class None
 	{
-
 	}
 
 	public static partial class Optional
 	{
-
 		public static Optional<T> Some<T>(T value)
 		{
 			return new Optional<T>(true, value);

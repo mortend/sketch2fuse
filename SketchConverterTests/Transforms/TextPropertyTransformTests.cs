@@ -8,7 +8,6 @@ namespace SketchConverterTests.Transforms
 {
 	public class TextPropertyTransformTests
 	{
-
 		[Test]
 		public void CreatesPropertyForStringValue()
 		{

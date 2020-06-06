@@ -143,7 +143,6 @@ namespace SketchConverter.SketchParser
 	{
 		public NSKeyedArchiveException(string message) : base(message)
 		{
-
 		}
 	}
 

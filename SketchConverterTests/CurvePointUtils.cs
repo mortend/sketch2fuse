@@ -20,7 +20,6 @@ namespace SketchConverterTests
 
 	public class CurvePointUtils
 	{
-
 		// create CurvePoint representing a straight line with corner radius = 0
 		public static SketchCurvePoint LinePoint(double x, double y, double cornerRadius = 0)
 		{

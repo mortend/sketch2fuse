@@ -8,7 +8,6 @@ namespace SketchConverterTests
 	[TestFixture]
 	public class GeometryTests
 	{
-
 		[TestCase(new []{0.5, 0.0},new []{1.0, 0.0}, new []{1.0, 1.0}, new []{0.0, 1.0})] // first point moved
 		[TestCase(new []{0.0, 0.0},new []{1.0, 0.2}, new []{1.0, 1.0}, new []{0.0, 1.0})] // second point moved
 		[TestCase(new []{0.0, 0.0},new []{1.0, 0.0}, new []{0.9, 0.9}, new []{0.0, 1.0})] // third point moved
@@ -57,6 +56,5 @@ namespace SketchConverterTests
 			var path = new SketchPath(new List<SketchCurvePoint>(), false);
 			Assert.That(Geometry.IsAxisAlignedRectangle(path), Is.False);
 		}
-
 	}
 }

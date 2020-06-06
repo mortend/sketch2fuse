@@ -10,7 +10,6 @@ namespace SketchConverterTests
 {
 	public static class DocumentBuilder
 	{
-
 		public static SketchSymbolInstance SymbolInstanceOf(SketchSymbolMaster symbol, string name = null)
 		{
 			return new SketchSymbolInstance(

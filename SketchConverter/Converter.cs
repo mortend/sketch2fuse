@@ -57,10 +57,8 @@ namespace SketchConverter
 
 		private IEnumerable<string> ValidInputFiles(IEnumerable<string> inputFilePaths)
 		{
-
 			foreach (var sketchFilePath in inputFilePaths)
 			{
-
 				if (!File.Exists(sketchFilePath))
 				{
 					_log.Error("Can't convert non-existing Sketch-file " + sketchFilePath);
@@ -74,7 +72,6 @@ namespace SketchConverter
 
 		private bool OutputDirectoryNotValid(string outputdirPath)
 		{
-
 			if (!Directory.Exists(outputdirPath))
 			{
 				_log.Error("Output directory " + outputdirPath + " does not exist");

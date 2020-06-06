@@ -8,8 +8,8 @@ namespace SketchConverter.SketchModel
 		public readonly SketchTextBoxAlignment TextBoxAlignment;
 		public new SketchStyle Style { get { return ((SketchLayer)this).Style.Value; } }
 
-		public SketchText(SketchLayer layer, 
-			SketchAttributedString attributedString, 
+		public SketchText(SketchLayer layer,
+			SketchAttributedString attributedString,
 			SketchTextBoxAlignment textBoxAlignment) : base(layer)
 		{
 			if (!layer.Style.HasValue)

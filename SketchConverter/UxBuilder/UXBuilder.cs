@@ -316,7 +316,7 @@ namespace SketchConverter.UxBuilder
 			}
 
 			uxNode.Children.AddRange(BuildShadows(text.Name, text.Style));
-			
+
 			if (text.Style.Borders.Count > 0)
 			{
 				_log.Warning($"UX Builder: Borders on Sketch texts not supported in UX (Sketch object: {text.Name}).");
@@ -470,7 +470,7 @@ namespace SketchConverter.UxBuilder
 			var dx = shadow.Offset.X;
 			var dy = shadow.Offset.Y;
 			// atan2 will give us the angle in the correct quadrant with cartesian coordinates.
-			// Sketch uses screen coordinates which resulted in the shadow being flipped in the X-direction 
+			// Sketch uses screen coordinates which resulted in the shadow being flipped in the X-direction
 			// We therefore call atan2 with -dx. This gives us the right result. 2018-02-05 anette
 			var angle = (180 / Math.PI) * Math.Atan2(dy, -dx);
 			var distance = Math.Sqrt(dx*dx + dy*dy);
@@ -505,7 +505,7 @@ namespace SketchConverter.UxBuilder
 			}
 
 			targetNode.Children.AddRange(BuildShadows(layer.Name, layer.Style));
-			
+
 			var fillNodes = style.Fills
 				.Where(fill => fill.IsEnabled)
 				.Select(x => BuildBrush(x.Brush));

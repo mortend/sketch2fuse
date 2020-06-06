@@ -8,7 +8,7 @@
 		Intersection = 2,
 		Difference = 3
 	}
-	
+
 	public class SketchShapePath : SketchLayer
 	{
 		public readonly SketchPath Path;

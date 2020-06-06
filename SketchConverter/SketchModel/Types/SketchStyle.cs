@@ -10,11 +10,11 @@ namespace SketchConverter.SketchModel
 		public readonly IReadOnlyList<SketchShadow> InnerShadows;
 		public readonly Optional<SketchBlur> Blur;
 		public readonly Optional<double> Opacity;
-		
+
 		public SketchStyle(
-			IReadOnlyList<SketchFill> fills, 
-			IReadOnlyList<SketchBorder> borders, 
-			IReadOnlyList<SketchShadow> shadows, 
+			IReadOnlyList<SketchFill> fills,
+			IReadOnlyList<SketchBorder> borders,
+			IReadOnlyList<SketchShadow> shadows,
 			IReadOnlyList<SketchShadow> innerShadows,
 			Optional<SketchBlur> blur,
 			Optional<double> opacity)

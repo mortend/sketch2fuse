@@ -12,15 +12,15 @@ namespace SketchConverter
 		/// </summary>
 		public static Optional<T> ToOptional<T>(this T value) where T : class
 		{
-			return value != null 
-				? Optional.Some(value) 
+			return value != null
+				? Optional.Some(value)
 				: Optional.None();
 		}
 	}
 
 	public class None
 	{
-		
+
 	}
 
 	public static partial class Optional
@@ -82,7 +82,7 @@ namespace SketchConverter
 			if (ReferenceEquals(null, obj)) return false;
 			return obj is Optional<T> && Equals((Optional<T>)obj);
 		}
-		
+
 		public bool Equals(Optional<T> other)
 		{
 			return _hasValue.Equals(other._hasValue) && EqualityComparer<T>.Default.Equals(_value, other._value);
@@ -108,8 +108,8 @@ namespace SketchConverter
 
 		public Optional<TResult> As<TResult>() where TResult : T
 		{
-			return _hasValue && _value is TResult 
-				? Optional.Some((TResult)_value) 
+			return _hasValue && _value is TResult
+				? Optional.Some((TResult)_value)
 				: Optional.None();
 		}
 
@@ -153,7 +153,7 @@ namespace SketchConverter
 
 		public override string ToString()
 		{
-			return HasValue 
+			return HasValue
 				? "Some {" + Value + "}"
 				: "None";
 		}

@@ -21,6 +21,6 @@
             Motion = 1,
             Zoom = 2,
             Background = 3
-        }        
-    } 
+        }
+    }
 }

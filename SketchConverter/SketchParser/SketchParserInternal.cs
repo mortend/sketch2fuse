@@ -333,19 +333,19 @@ namespace SketchConverter.SketchParser
 				ParseStyle(layerJson),
 				children
 			);
-			
+
 			foreach (var child in children)
 			{
 				child.Parent = parent; //Parent doesn't exist until children are done parsing, so set it here
 			}
-			
+
 			return parent;
 		}
 
 
 		IEnumerable<SketchLayer> ParseChildLayers(JObject layer)
 		{
-			var layersJson = (JArray)layer["layers"];			
+			var layersJson = (JArray)layer["layers"];
 			return layersJson == null ? new List<SketchLayer>() : (layersJson.Cast<JObject>().Select(ParseLayer).SelectOk());
 		}
 
@@ -414,7 +414,7 @@ namespace SketchConverter.SketchParser
 		SketchShadow ParseShadow(JObject shadowJson)
 		{
 			ExpectedClasses(shadowJson, "shadow", "innerShadow");
-			
+
 			return new SketchShadow(
 				(bool?)shadowJson["isEnabled"] ?? false,
 				ParseColor((JObject)shadowJson["color"]),
@@ -433,10 +433,10 @@ namespace SketchConverter.SketchParser
 			{
 				throw new NoNullAllowedException($"Expected Sketch border to have a position");
 			}
-			
+
 			var pos = 0;
 			pos = (int) borderJson["position"];
-			
+
 			switch (pos)
 			{
 				case 0: return SketchBorderPosition.Center;
@@ -515,7 +515,7 @@ namespace SketchConverter.SketchParser
 			var enabled = (bool?) blurJson["isEnabled"] ?? false;
 			if (!enabled)
 				return Optional.None();
-			
+
 			return new SketchBlur(
 				ParsePoint((string) blurJson["center"]),
 				(int?) blurJson["motionAngle"] ?? 0,
@@ -555,7 +555,7 @@ namespace SketchConverter.SketchParser
 					return SketchBlur.SketchBlurType.Gaussian;
 			}
 		}
-			
+
 
 		SketchShapeGroup ParseShapeGroup(JObject shapeGroupJson)
 		{

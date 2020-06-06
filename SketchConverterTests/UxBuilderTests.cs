@@ -19,7 +19,7 @@ namespace SketchConverterTests
 		public void BuildUxForSketchShapeGroupWithMaskingGivesUnsupportedWarnings()
 		{
 			var shapeGroup = new SketchShapeGroup(
-				new SketchLayer(CreateLayer(5, 5), new List<SketchLayer>()), 
+				new SketchLayer(CreateLayer(5, 5), new List<SketchLayer>()),
 				Mask);
 
 			var parentGroup =
@@ -135,7 +135,7 @@ namespace SketchConverterTests
 
 	class UnimplementedLayerType : SketchLayer
 	{
-		public UnimplementedLayerType() 
+		public UnimplementedLayerType()
 			: base(new SketchLayer(
 				       Guid.Empty,
 				       null,

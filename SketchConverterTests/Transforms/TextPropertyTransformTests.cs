@@ -17,19 +17,19 @@ namespace SketchConverterTests.Transforms
 
 			var node = new UxNode("Panel");
 			node.Children.Add(CreateTextNode("TextLayer", "Guten Tag!"));
-			
+
 			transform.Apply(node);
-			
+
 			var propertyShouldBeFirstElement = (UxNode)node.Children.ToList()[0];
 			AssertHasAttribute(propertyShouldBeFirstElement, "ux:Property", "TextLayer");
 
 			var texts = node.ChildrenOfClass("Text").ToList();
 			Assert.That(texts.Count(), Is.EqualTo(1));
 			AssertHasAttribute(texts[0], "Value", "{Property TextLayer}");
-			
+
 			AssertHasAttribute(node, "TextLayer", "Guten Tag!");
 		}
-		
+
 		[Test]
 		public void CreatesPropertiesForSeveralStringValues()
 		{
@@ -39,12 +39,12 @@ namespace SketchConverterTests.Transforms
 			var node = new UxNode("Panel");
 			node.Children.Add(CreateTextNode("FirstLayer", "Guten Tag!"));
 			node.Children.Add(CreateTextNode("OtherLayer", "Wie geht's?"));
-			
+
 			transform.Apply(node);
-			
+
 			var firstPropertyShouldBeFirstElement = (UxNode)node.Children.ToList()[0];
 			AssertHasAttribute(firstPropertyShouldBeFirstElement, "ux:Property", "FirstLayer");
-			
+
 			var secondPropertyShouldBeSecondElement = (UxNode)node.Children.ToList()[1];
 			AssertHasAttribute(secondPropertyShouldBeSecondElement, "ux:Property", "OtherLayer");
 
@@ -52,7 +52,7 @@ namespace SketchConverterTests.Transforms
 			Assert.That(texts.Count(), Is.EqualTo(2));
 			AssertHasAttribute(texts[0], "Value", "{Property FirstLayer}");
 			AssertHasAttribute(texts[1], "Value", "{Property OtherLayer}");
-			
+
 			AssertHasAttribute(node, "FirstLayer", "Guten Tag!");
 			AssertHasAttribute(node, "OtherLayer", "Wie geht's?");
 		}
@@ -66,12 +66,12 @@ namespace SketchConverterTests.Transforms
 			var node = new UxNode("Panel");
 			node.Children.Add(CreateTextNode("I have a space", "Ohayou Gozaimasu!"));
 			node.Children.Add(CreateTextNode("var", "Konbanwa"));
-			
+
 			transform.Apply(node);
-			
+
 			var stringProperties = node.Children.Where(c => c is UxNode).Cast<UxNode>().Where(c => c.ClassName == "string");
 			Assert.That(stringProperties.Count(), Is.EqualTo(0));
-			
+
 			Assert.That(node.Attributes.Keys, Does.Not.Contain("var"));
 			Assert.That(node.Attributes.Keys, Does.Not.Contain("I have a space"));
 
@@ -88,7 +88,7 @@ namespace SketchConverterTests.Transforms
 			var node = new UxNode("Panel");
 			node.Children.Add(CreateTextNode("Strata", "Grata"));
 			node.Children.Add(CreateTextNode("Strata", "NonGrata"));
-			
+
 			transform.Apply(node);
 
 			AssertHasAttribute((UxNode)node.Children.ToList()[0], "ux:Property", "Strata");

@@ -31,7 +31,7 @@ namespace SketchConverter.Transforms
 		{
 			foreach (var child in uxClass.Children.Where(c => c is UxNode).Cast<UxNode>())
 			{
-				Apply(child, propertyValues);	
+				Apply(child, propertyValues);
 			}
 
 			if (uxClass.ClassName == "Text")

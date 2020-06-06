@@ -15,7 +15,7 @@ namespace SketchConverter.SketchModel
 		public readonly bool IsFlippedHorizontal;
 		public readonly IReadOnlyList<SketchLayer> Layers;
 		public readonly Optional<SketchStyle> Style;
-		
+
 		public SketchLayer(SketchLayer layer)
 			: this(layer.Id,
 				layer.Parent,
